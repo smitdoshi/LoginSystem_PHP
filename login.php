@@ -59,6 +59,8 @@ else{
     $errormsg="Username or Password is empty";
 }
 
+
+
 //// Here we will validate Login Button Pressed and then check with mysql
 //    if(isset($_POST['login'])){
 //        $username = mysqli_real_escape_string($DBconn,$_POST['username']);
@@ -122,6 +124,8 @@ else{
                 </div>
                 <input class = "btn btn-lg btn-primary btn-block" type = "submit"
                     value="Login" name = "login"/><br>
+                <input class = "btn btn-lg btn-primary btn-block" type = "submit" value="Signup"
+                       name = "reg"/><br>
                 <?php if(isset($_POST["login"])){
                     echo "
                         <div class=\"alert alert-danger\">".$errormsg."

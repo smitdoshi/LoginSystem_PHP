@@ -8,6 +8,7 @@
 session_start();
 include "DBconnect.php";
 
+
 // error validation true or false
 $error = false;
 
@@ -35,7 +36,9 @@ if(isset($_POST['signup'])){
     if(!$error){
         if(mysqli_query($DBconn,"INSERT INTO login (username,password) VALUES ('".$username_reg."','".$password_reg."')")){
             $successmsg = "Successfully Registered!";
-            header("location:login.php");
+            // Set the Session varialbe to true and redirect it to the homepage
+            $_SESSION['login_usr'] = $username_reg;
+            header("location:home.php");
         }
         else{
             $errormsg = "Error in registering.";
