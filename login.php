@@ -12,51 +12,50 @@ $errormsg="";
 // ------ Another way of Validation ------------
 // username and password sent from form
 //if($_SERVER["REQUEST_METHOD"]=="POST")
+if(!isset($_POST["regi"])) {
 
-if((!empty($_POST["logusername"]))&&(!empty($_POST["logpassword"]))){
-    $loginusername = mysqli_real_escape_string($DBconn,$_POST['logusername']);
-    $loginpwd = mysqli_real_escape_string($DBconn,$_POST['logpassword']);
+    if ((!empty($_POST["logusername"])) && (!empty($_POST["logpassword"]))) {
+        $loginusername = mysqli_real_escape_string($DBconn, $_POST['logusername']);
+        $loginpwd = mysqli_real_escape_string($DBconn, $_POST['logpassword']);
 
-    $sql_query = "SELECT id FROM login WHERE username='$loginusername' AND password='$loginpwd'";
-    // query to perform
-    $result_query = mysqli_query($DBconn,$sql_query);
-    // Check the row count
-    $row_count = mysqli_num_rows($result_query);
+        $sql_query = "SELECT id FROM login WHERE username='$loginusername' AND password='$loginpwd'";
+        // query to perform
+        $result_query = mysqli_query($DBconn, $sql_query);
+        // Check the row count
+        $row_count = mysqli_num_rows($result_query);
 
-    // If the count ==1 and username and password matches
-    if($row_count==1){
-        $_SESSION['login_usr']=$loginusername; //store the login username to the session
-        // Check if remember is checked
-        if(!empty($_POST["remember"])){
-            setcookie("usr_name",$_POST["logusername"],time()+ (1*60*60*24)); // 24hr day
-            setcookie("usr_password",$_POST["logpassword"],time()+ (1*60*60*24)); // 24 hr password
-            // redirect it to homepage
-            header("location:home.php");
-        }
-        // If not then don't set cookies
-        else {
-            if(isset($_COOKIE["usr_name"])){
-                setcookie("usr_name","");
+        // If the count ==1 and username and password matches
+        if ($row_count == 1) {
+            $_SESSION['login_usr'] = $loginusername; //store the login username to the session
+            // Check if remember is checked
+            if (!empty($_POST["remember"])) {
+                setcookie("usr_name", $_POST["logusername"], time() + (1 * 60 * 60 * 24)); // 24hr day
+                setcookie("usr_password", $_POST["logpassword"], time() + (1 * 60 * 60 * 24)); // 24 hr password
+                // redirect it to homepage
+                header("location:home.php");
+            } // If not then don't set cookies
+            else {
+                if (isset($_COOKIE["usr_name"])) {
+                    setcookie("usr_name", "");
+                }
+                if (isset($_COOKIE["usr_password"])) {
+                    setcookie("usr_password", "");
+                }
             }
-            if(isset($_COOKIE["usr_password"])){
-                setcookie("usr_password","");
-            }
         }
+        // redirect it to homepage
+        header("location:home.php");
+    } // If cookies are already set then redirect it to the homepage
+    elseif ((isset($_SESSION['login_usr'])) && ($_SESSION['login_usr'] == true)) {
+        // redirect it to homepage
+        header("location:home.php");
     }
-    else{
-        //error
-        $errormsg = "Wrong Username or Password";
+    else {
+        $errormsg = "Username or Password is empty";
     }
-    // redirect it to homepage
-    header("location:home.php");
 }
-// If cookies are already set then redirect it to the homepage
-elseif((isset($_SESSION['login_usr']))&&($_SESSION['login_usr']==true)){
-    // redirect it to homepage
-    header("location:home.php");
-}
-else{
-    $errormsg="Username or Password is empty";
+else {
+    header("location:registration.php");
 }
 
 
@@ -125,9 +124,16 @@ else{
                 <input class = "btn btn-lg btn-primary btn-block" type = "submit"
                     value="Login" name = "login"/><br>
                 <input class = "btn btn-lg btn-primary btn-block" type = "submit" value="Signup"
-                       name = "reg"/><br>
-                <?php if(isset($_POST["login"])){
+                       name = "regi"/><br>
+                <?php if((isset($_POST["login"]))&&(!empty($_POST["logusername"]))){
                     echo "
+                        
+                        <div class=\"alert alert-danger\">".'Wrong Username or Password'."
+                        <br>
+                    ";
+                }elseif((isset($_POST["login"]))&&(empty($_POST["logusername"]))){
+                    echo "
+                        
                         <div class=\"alert alert-danger\">".$errormsg."
                         <br>
                     ";

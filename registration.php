@@ -11,7 +11,6 @@ include "DBconnect.php";
 
 // error validation true or false
 $error = false;
-
 // check if form is submitted
 if(isset($_POST['signup'])){
     $username_reg = mysqli_real_escape_string($DBconn,$_POST['regusername']);
@@ -40,9 +39,8 @@ if(isset($_POST['signup'])){
             $_SESSION['login_usr'] = $username_reg;
             header("location:home.php");
         }
-        else{
-            $errormsg = "Error in registering.";
-        }
+    }else{
+        $errormsg = "Error in registering.";
     }
 }
 ?>
@@ -81,7 +79,14 @@ if(isset($_POST['signup'])){
         <input class = "btn btn-lg btn-primary btn-block" type = "submit"
                value="Signup" name = "signup"/><br>
 
+        <?php if((isset($error))&&(isset($_POST["signup"]))){
+            echo "
+                        <div class=\"alert alert-danger\">".$errormsg."
+                        <br>
+                    ";
+        } ?>
     </form>
+
 </div>
 
 </body>
