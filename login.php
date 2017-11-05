@@ -125,7 +125,7 @@ else {
             <input class = "btn btn-lg btn-primary btn-block" type = "submit"
                    value="Login" name = "login" id="signIn_button"/><br>
             <input class = "btn btn-lg btn-primary btn-block" type = "submit" value="Signup"
-                   name = "regi"/><br>
+                   name = "regi" id="signIn_button"/><br>
             <?php if((isset($_POST["login"]))&&(!empty($_POST["logusername"]))){
                 echo "
                         
