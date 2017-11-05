@@ -97,50 +97,52 @@ else {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <html>
-    <head>
-        <title>
-            LoginPage
-        </title>
-    </head>
-    <body>
-        <h1 class="center-align">Login Page</h1>
-        <div class = "container">
-            <form class = "form-signin" method = "post" action="">
-                <h4 class = "form-signin-heading"></h4>
-                <input type = "text" class = "form-control"
+<head>
+    <title>
+        LoginPage
+    </title>
+</head>
+<body>
+<div class = "container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form class = "form-signin" method = "post" action="">
+            <h4 class = "form-signin-heading"></h4>
+            <input type = "text" class = "form-control"
                    name = "logusername" placeholder = "username" autofocus
-                       value="<?php if(isset($_COOKIE["usr_name"])){echo $_COOKIE["usr_name"];} ?>"> <!-- Check if username cookie is set-->
-                <br>
-                <input type = "text" class = "form-control"
+                   value="<?php if(isset($_COOKIE["usr_name"])){echo $_COOKIE["usr_name"];} ?>"> <!-- Check if username cookie is set-->
+            <br>
+            <input type = "text" class = "form-control"
                    name = "logpassword" placeholder = "password"
-                       value="<?php if(isset($_COOKIE["usr_name"])){echo $_COOKIE["usr_password"];} ?>"> <!-- Check if password cookie is set-->
-                <br>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="remember">
-                         Remember Me
-                    </label>
-                </div>
-                <input class = "btn btn-lg btn-primary btn-block" type = "submit"
-                    value="Login" name = "login"/><br>
-                <input class = "btn btn-lg btn-primary btn-block" type = "submit" value="Signup"
-                       name = "regi"/><br>
-                <?php if((isset($_POST["login"]))&&(!empty($_POST["logusername"]))){
-                    echo "
+                   value="<?php if(isset($_COOKIE["usr_name"])){echo $_COOKIE["usr_password"];} ?>"> <!-- Check if password cookie is set-->
+            <br>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="remember">
+                    Remember Me
+                </label>
+            </div>
+            <input class = "btn btn-lg btn-primary btn-block" type = "submit"
+                   value="Login" name = "login" id="signIn_button"/><br>
+            <input class = "btn btn-lg btn-primary btn-block" type = "submit" value="Signup"
+                   name = "regi"/><br>
+            <?php if((isset($_POST["login"]))&&(!empty($_POST["logusername"]))){
+                echo "
                         
                         <div class=\"alert alert-danger\">".'Wrong Username or Password'."
                         <br>
                     ";
-                }elseif((isset($_POST["login"]))&&(empty($_POST["logusername"]))){
-                    echo "
+            }elseif((isset($_POST["login"]))&&(empty($_POST["logusername"]))){
+                echo "
                         
                         <div class=\"alert alert-danger\">".$errormsg."
                         <br>
                     ";
-                } ?>
-            </form>
-        </div>
+            } ?>
+        </form>
+    </div>
+</div>
 
-    </body>
+</body>
 </html>
 

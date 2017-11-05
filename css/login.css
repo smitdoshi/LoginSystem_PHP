@@ -48,11 +48,48 @@ body {
     border-color:#017572;
 }
 
-h2{
-    text-align: center;
-    color: #017572;
-}
-
 .center-align{
     text-align: center;
+}
+
+.login-box {
+    background-color: white;
+    max-width: 340px;
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+h2 {
+    background-color: #665851;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+    line-height: 2.8em;
+}
+
+#signIn_button {
+    margin-top: 0px;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    background-color: #665851;
+    cursor: pointer;
+    outline: none;
+}
+
+p.small {
+    font-size: 0.8em;
+    margin: 20px 0 0;
 }
