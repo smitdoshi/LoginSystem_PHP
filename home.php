@@ -49,7 +49,7 @@ include "session.php";
             <div class="item active">
                 <img src="assest/image/slide1.jpg" class="img-responsive" alt="">
             </div>
-            
+
             <div class="col-md-5 text-center col-md-offset-3">
                 <form role="form" method="post" action>
                     <div class="fomr-group">
