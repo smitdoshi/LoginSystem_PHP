@@ -102,7 +102,8 @@ else {
         LoginPage
     </title>
 </head>
-<body>
+<body class="container">
+<!--Background Image-->
 <div class = "container">
     <div class="login-box">
         <h2>Login</h2>
@@ -125,7 +126,7 @@ else {
             <input class = "btn btn-lg btn-primary btn-block" type = "submit"
                    value="Login" name = "login" id="signIn_button"/><br>
             <input class = "btn btn-lg btn-primary btn-block" type = "submit" value="Signup"
-                   name = "regi" id="signIn_button"/><br>
+                   name = "regi" id="signUp_button"/><br>
             <?php if((isset($_POST["login"]))&&(!empty($_POST["logusername"]))){
                 echo "
                         

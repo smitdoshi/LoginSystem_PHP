@@ -13,6 +13,7 @@ include "session.php";
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="styleshee" href="css/home.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,11 +23,14 @@ include "session.php";
     <head>
         <title>HomePage</title>
     </head>
-    <body>
+    <body class="container-fluid">
+
         <div class="container">
+
             <div class="text-center">
                 <h1>Homepage</h1>
             </div>
+
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -41,6 +45,11 @@ include "session.php";
                     </ul>
                 </div>
             </nav>
+
+            <div class="item active">
+                <img src="assest/image/slide1.jpg" class="img-responsive" alt="">
+            </div>
+            
             <div class="col-md-5 text-center col-md-offset-3">
                 <form role="form" method="post" action>
                     <div class="fomr-group">
@@ -58,6 +67,8 @@ include "session.php";
                     </div>
                 </form>
             </div>
+
         </div>
+
     </body>
 </html>

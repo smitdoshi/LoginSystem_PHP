@@ -4,6 +4,16 @@ body {
     background-color: #ADABAB;
 }
 
+.container{
+    background: url("../assest/image/photo_bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    color: #666;
+}
+
 .form-signin {
     max-width: 330px;
     padding: 15px;
@@ -74,7 +84,7 @@ h2 {
     line-height: 2.8em;
 }
 
-#signIn_button {
+#signUp_button {
     margin-top: 0px;
     border: 0;
     border-radius: 2px;
@@ -85,6 +95,21 @@ h2 {
     font-size: 0.7em;
     letter-spacing: 1px;
     background-color: #665851;
+    cursor: pointer;
+    outline: none;
+}
+
+#signIn_button {
+    margin-top: 0px;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    background-color: #c83636;
     cursor: pointer;
     outline: none;
 }
