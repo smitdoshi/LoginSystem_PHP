@@ -1,4 +1,7 @@
 # LoginSystem_PHP
+
+[![PHP Version][PHP-image]][PHP-url]
+
 This repository contains my PHP practice code where I have tried to create Login System using PHP and MYSQL<br>
 I have tried to use Design Pattern while coding for this project.<br>
 Basically I have segregated my code into different files.<br>
@@ -7,7 +10,7 @@ This way I have tried to keep my code separeate which can be easy and handy to u
 
 ## Installation
 
-XAMPP and PHP Strom
+XAMPP, PHP Strom and MYSQL
 
 
 ## License
