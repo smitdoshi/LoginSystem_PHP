@@ -113,7 +113,7 @@ else {
                    name = "logusername" placeholder = "username" autofocus
                    value="<?php if(isset($_COOKIE["usr_name"])){echo $_COOKIE["usr_name"];} ?>"> <!-- Check if username cookie is set-->
             <br>
-            <input type = "text" class = "form-control"
+            <input type = "password" class = "form-control"
                    name = "logpassword" placeholder = "password"
                    value="<?php if(isset($_COOKIE["usr_name"])){echo $_COOKIE["usr_password"];} ?>"> <!-- Check if password cookie is set-->
             <br>
