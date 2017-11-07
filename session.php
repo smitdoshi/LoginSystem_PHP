@@ -21,7 +21,7 @@ $login_session = $row['username'];
 
 // If the session is not SET
 if(!isset($_SESSION['login_usr'])){
-    header("location: login.php");
+    header("location: index.php");
 }
 
 ?>
