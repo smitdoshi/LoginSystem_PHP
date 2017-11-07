@@ -32,7 +32,7 @@ if(!isset($_POST["regi"])) {
                 setcookie("usr_name", $_POST["logusername"], time() + (1 * 60 * 60 * 24)); // 24hr day
                 setcookie("usr_password", $_POST["logpassword"], time() + (1 * 60 * 60 * 24)); // 24 hr password
                 // redirect it to homepage
-                header("location:home.php");
+                header("location:index.php");
             } // If not then don't set cookies
             else {
                 if (isset($_COOKIE["usr_name"])) {
@@ -44,11 +44,11 @@ if(!isset($_POST["regi"])) {
             }
         }
         // redirect it to homepage
-        header("location:home.php");
+        header("location:index.php");
     } // If cookies are already set then redirect it to the homepage
     elseif ((isset($_SESSION['login_usr'])) && ($_SESSION['login_usr'] == true)) {
         // redirect it to homepage
-        header("location:home.php");
+        header("location:index.php");
     }
     else {
         $errormsg = "Username or Password is empty";
@@ -78,7 +78,7 @@ else {
 //            $_SESSION['login_usr'] = $username;
 //            print_r($_SESSION);
 //            // Now we will redirect login user to home page
-//            //header("location:home.php");
+//            //header("location:index.php");
 //        }else{
 //            $errormsg= "Wrong Username or Password";
 //            return false;

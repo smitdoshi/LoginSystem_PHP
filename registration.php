@@ -37,7 +37,7 @@ if(isset($_POST['signup'])){
             $successmsg = "Successfully Registered!";
             // Set the Session varialbe to true and redirect it to the homepage
             $_SESSION['login_usr'] = $username_reg;
-            header("location:home.php");
+            header("location:index.php");
         }
     }else{
         $errormsg = "Error in registering.";
