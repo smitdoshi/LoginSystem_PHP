@@ -107,7 +107,7 @@ else {
 <div class = "container">
     <div class="login-box">
         <h2>Login</h2>
-        <form class = "form-signin" method = "post" action="">
+        <form class = "form-signin" method = "POST" action="#">
             <h4 class = "form-signin-heading"></h4>
             <input type = "text" class = "form-control"
                    name = "logusername" placeholder = "username" autofocus
