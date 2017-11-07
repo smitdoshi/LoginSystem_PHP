@@ -71,10 +71,10 @@ if(isset($_POST['signup'])){
                name = "regusername" placeholder = "username" autofocus>
         <br>
         <h2><span class="label label-info">Password</span></h2>
-        <input type = "text" class = "form-control"
+        <input type = "password" class = "form-control"
                name = "regpwd" placeholder = "Password"><br>
         <h2><span class="label label-info">Confirm Password</span></h2>
-        <input type = "text" class = "form-control"
+        <input type = "password" class = "form-control"
                name = "confirmregpwd" placeholder = "Confirm Password"><br>
         <input class = "btn btn-lg btn-primary btn-block" type = "submit"
                value="Signup" name = "signup"/><br>
